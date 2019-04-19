@@ -1,0 +1,131 @@
+
+
+Diseño de los Tipos de Dato Abstracto (T.D.A):
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+|																																					  |	
+|	Nombre de la clase: Menu.		 																												  |
+|																												                                      | 			
+|-----------------------------------------------------------------------------------------------------------------------------------------------------|													
+|																																					  |	
+|		Atributos de la clase: 																														  |		
+|																																					  |
+|			- opcion_usuario. Será de tipo caracter. Dominio = {a, b, c, d, e, f, g, h}																  |	
+|			- Gondola_principal. Será un objeto de clase Góndola. 																					  |	
+|			- Chango_principal. Será un objeto de clase Chango.                                                                                       |
+| 																					                                                                  |				 
+|-----------------------------------------------------------------------------------------------------------------------------------------------------|	
+|																																					  |		
+|	Métodos de la clase: 																															  |	
+|																																					  |		
+|		//Descripción: Este método se encargará de devolver un caracter que indica la opcion de menú elegida por el usuario.   						  |	
+|		//Precondiciones: -.																													      |		
+|		//Postcondiciones: Retorna un caracter que representa al atributo opcion_usuario correspondiente a un objeto de clase Menu.                   |
+|		+ char obtener_opcion();																										              |
+|																																					  |		
+|		//Descripción: Este método se encargará de asignarle un nuevo caracter al atributo opcion_usuario perteneciente a un objeto de clase Menú.    |
+|		//Precondiciones: La opcion pasada como parámetro debe encontrarse dentro del dominio de dicho atributo.                                      |
+|		//Postcondiciones: El atributo opcion_usuario de clase Menu es asignado con el caracter pasado como parámetro opcion.                         |
+|		+ tipo de dato vacío asignar_precio(char opcion);																				     		  |	
+|                       																												              | 
+|		//Descripción: De acuerdo con la opción que ha elegido el usuario, realiza una tarea particular.                                              |
+|		//Precondiciones: La opción elegida por el usuario se encuentra dentro del dominio de dicho atributo. 					     				  |
+|		//Postcondiciones: Ejecuta la opción acorde con lo que haya elegido el usuario. 									    					  |	 
+|		+ tipo de dato vacío ejecutar_opcion();																								          |
+|																																					  |			
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+Nombre de la clase: Gondola.
+
+Atributos: 
+
+	- productos_de_gondola. Será un vector de objetos de clase Producto.  
+
+
+Métodos de la clase: 
+	
+	+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+Nombre de la clase: Chango.
+
+Atributos: 
+
+	- productos_de_chango. Será un vector de objetos de clase Producto. 	
+
+Métodos de la clase: 
+
+	+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+Nombre de la clase: Producto.
+
+Atributos de la clase:
+
+	- nombre. Será una cadena de caracteres. Dominio = Letras comunes (Mayúsculas y minúsculas) y números. No se aceptan caracteres especiales. 
+	El tamaño de la cadena deberá ser mayor que cero y menor que 50 (Máximo preestablecido). 
+	- codigo_de_barras. Será un entero. Dominio = {0...9999}
+	- precio. Será un flotante. Dominio = {0...9999}
+	- esta_en_oferta. Será un booleano. 
+
+Métodos de la clase:
+	
+	//Descripción: Es el método constructor por defecto. Al crear un objeto de clase Producto iniciliza todos los atributos con el valor 0. 
+	//Precondiciones: -.
+	//Postcondiciones: Inicializa todos los atributos de un objeto de clase Producto con el valor 0. 
+	+ Producto();
+
+	//Descripción: Es una sobrecarga del método constructor. Al utilizar este método para crear un objeto de clase Producto, se inicializan 
+	todos los atributos con los valores o datos correspondientes que le ingresan a este método como parámetros.   
+	//Precondiciones: Todos los parámetros que son pasados corresponden a datos válidos. La cadena de caracteres nombre_producto tiene un tamaño mayor
+	a cero y su cantidad de caracteres no supere al máximo preestablecido. El entero codigo_producto es mayor que cero, al igual que el precio_producto. 
+	//Postcondiciones: Inicializa todos los atributos de un objeto de clase Producto con los valores o datos obtenidos como parámetros de este 
+	método.  
+	+ Producto(cadena de caracteres nombre_producto, entero codigo_producto, flotante precio_producto, booleano producto_en_oferta);
+
+	//Descripción: Este método se encargará de devolver la cadena de caracteres que representa el nombre del producto. 
+	//Precondiciones: -.
+	//Postcondiciones: Retorna la cadena de caracteres que representa el nombre producto. 
+	+ cadena de caracteres obtener_nombre();
+
+	//Descripción: Este método se encargará de asignarle un nuevo nombre al objeto de clase Producto. 
+	//Precondiciones: El tamaño de la cadena de caracteres es mayor que cero y menor que el máximo preestablecido.
+	//Postcondiciones: Le otorga el nuevo nombre nombre pasado como párametro al objeto de clase Producto.  
+	+ tipo de dato vacío asignar_nombre(cadena de caracteres nombre_producto);
+
+	//Descripción: Este método se encargará de devolver el código de barras de un objeto de clase Producto.  
+	//Precondiciones: -.
+	//Postcondiciones: Retorna el código de barras correspondiente de un objeto de clase Prodcuto.  
+	+ entero obtener_codigo();
+
+	//Descripción: Este método se encargará de asignarle un nuevo código al objeto de clase Producto. 
+	//Precondiciones: El codigo_producto pasado como parámetro debe encontrarse dentro del dominio del atributo. 
+	//Postcondiciones: El atributo codigo_de_barras del objeto de clase Producto es asignado con el valor de codigo_producto.   
+	+ tipo de dato vacío asignar_codigo(entero codigo_producto);
+
+	//Descripción: Este método se encargará de devolver el precio de un objeto de clase Producto.  
+	//Precondiciones: -.
+	//Postcondiciones: Retorna el precio correspondiente de un objeto de clase Prodcuto.  
+	+ flotante obtener_precio();
+
+	//Descripción: Este método se encargará de asignarle un nuevo precio al objeto de clase Producto. 
+	//Precondiciones: El precio_producto pasado como parámetro debe encontrarse dentro del dominio del atributo. 
+	//Postcondiciones: El atributo precio del objeto de clase Producto es asignado con el valor de precio_producto.   
+	+ tipo de dato vacío asignar_precio(flotante precio_producto);
+
+	//Descripción: Este método se encargará de devolver un booleana indicando si el objeto de clase Producto se encuentra o no en oferta.  
+	//Precondiciones: -.
+	//Postcondiciones: Retorna un booleano indicando la condición de oferta de un objeto de clase Producto.   
+	+ booleano obtener_condicion_oferta();
+
+	//Descripción: Este método se encargará de asignarle una nueva condición al booleano esta_en_oferta de un objeto determinado de clase Producto.  
+	//Precondiciones: -. 
+	//Postcondiciones: El atributo esta_en_oferta de un determinado objeto de clase Producto es reemplazado en condición por parámetro envíado 
+	a través del método.   
+	+ tipo de dato vacío asignar_condicion_oferta(booleano producto_en_oferta);
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------	
