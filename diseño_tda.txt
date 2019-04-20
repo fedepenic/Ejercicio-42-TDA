@@ -3,49 +3,55 @@
 Diseño de los Tipos de Dato Abstracto (T.D.A):
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------
-|																																					  |	
-|	Nombre de la clase: Menu.		 																												  |
-|																												                                      | 			
-|-----------------------------------------------------------------------------------------------------------------------------------------------------|													
-|																																					  |	
-|		Atributos de la clase: 																														  |		
-|																																					  |
-|			- opcion_usuario. Será de tipo caracter. Dominio = {a, b, c, d, e, f, g, h}																  |	
-|			- Gondola_principal. Será un objeto de clase Góndola. 																					  |	
-|			- Chango_principal. Será un objeto de clase Chango.                                                                                       |
-| 																					                                                                  |				 
-|-----------------------------------------------------------------------------------------------------------------------------------------------------|	
-|																																					  |		
-|	Métodos de la clase: 																															  |	
-|																																					  |		
-|		//Descripción: Este método se encargará de devolver un caracter que indica la opcion de menú elegida por el usuario.   						  |	
-|		//Precondiciones: -.																													      |		
-|		//Postcondiciones: Retorna un caracter que representa al atributo opcion_usuario correspondiente a un objeto de clase Menu.                   |
-|		+ char obtener_opcion();																										              |
-|																																					  |		
-|		//Descripción: Este método se encargará de asignarle un nuevo caracter al atributo opcion_usuario perteneciente a un objeto de clase Menú.    |
-|		//Precondiciones: La opcion pasada como parámetro debe encontrarse dentro del dominio de dicho atributo.                                      |
-|		//Postcondiciones: El atributo opcion_usuario de clase Menu es asignado con el caracter pasado como parámetro opcion.                         |
-|		+ tipo de dato vacío asignar_precio(char opcion);																				     		  |	
-|                       																												              | 
-|		//Descripción: De acuerdo con la opción que ha elegido el usuario, realiza una tarea particular.                                              |
-|		//Precondiciones: La opción elegida por el usuario se encuentra dentro del dominio de dicho atributo. 					     				  |
-|		//Postcondiciones: Ejecuta la opción acorde con lo que haya elegido el usuario. 									    					  |	 
-|		+ tipo de dato vacío ejecutar_opcion();																								          |
-|																																					  |			
+																																					  	
+Nombre de la clase: Menu.		 																												  
+																											                                       																																											  	
+	Atributos de la clase: 																														  		
+																																					  
+		- opcion_usuario. Será de tipo caracter. Dominio = {a, b, c, d, e, f, g, h}																  	
+		- Gondola_principal. Será un objeto de clase Góndola. 																					  	
+		- Chango_principal. Será un objeto de clase Chango.   
+																																					  		
+	Métodos de la clase: 																															  	
+																																				  	
+		//Descripción: Este método se encargará de devolver un caracter que indica la opcion de menú elegida por el usuario.   							
+		//Precondiciones: -.																													      	
+		//Postcondiciones: Retorna un caracter que representa al atributo opcion_usuario correspondiente a un objeto de clase Menu.               
+		+ char obtener_opcion();																										          
+																																						
+		//Descripción: Este método se encargará de asignarle un nuevo caracter al atributo opcion_usuario perteneciente a un objeto de clase Menú.   
+		//Precondiciones: La opcion pasada como parámetro debe encontrarse dentro del dominio de dicho atributo.                                      
+		//Postcondiciones: El atributo opcion_usuario de clase Menu es asignado con el caracter pasado como parámetro opcion.                         
+		+ tipo de dato vacío asignar_opcion(char opcion);																				     		  	
+                       																												              
+		//Descripción: De acuerdo con la opción que ha elegido el usuario, realiza una tarea particular.                                              
+		//Precondiciones: La opción elegida por el usuario se encuentra dentro del dominio de dicho atributo. 					     				  
+		//Postcondiciones: Ejecuta la opción acorde con lo que haya elegido el usuario. 									    					  	 
+		+ tipo de dato vacío ejecutar_opcion();																								          
+																																					  			
 -------------------------------------------------------------------------------------------------------------------------------------------------------
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------
 Nombre de la clase: Gondola.
 
 Atributos: 
-
-	- productos_de_gondola. Será un vector de objetos de clase Producto.  
+	
+	- tamanio_gondola. Será un entero que represente la cantidad de productos que posea la Góndola. Dominio = {0...50}
+	- productos_de_gondola. Será un vector dinámico de objetos de clase Producto.  
 
 
 Métodos de la clase: 
 	
-	+
+	//Descripción: Este método se encargará de devolver el tamanio_gondola de un objeto de clase Gondola. 
+	//Precondiciones: -.
+	//Postcondiciones: Retorna el valor de tamanio_gondola de un objeto de clase Gondola. 
+	+ entero obtener_tamanio_gondola();
+
+	//Descripción: Este método se encargará de asignarle un nuevo valor al tamaño de la góndola, que representa la cantidad de productos presentes en ella. 
+	//Precondiciones: El tamanio_de_la_gondola pasado como parámetro debe ser un número positivo y natural, que no supere 50.  
+	//Postcondiciones: Al atributo tamanio_gondola de un objeto de clase Gondola se le asigna el valor de tamanio_de_la_gondola, variable pasada como 
+	parámetro. 
+	+ tipo de dato vacío asignar_tamanio_gondola(entero tamanio_de_la_gondola);
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -53,12 +59,23 @@ Métodos de la clase:
 Nombre de la clase: Chango.
 
 Atributos: 
-
-	- productos_de_chango. Será un vector de objetos de clase Producto. 	
+	
+	- tamanio_chango. Será un entero que represente la cantidad de productos que posee el Chango. Dominio = {0...50}
+	- productos_de_chango. Será un vector dinámico de objetos de clase Producto. 	
 
 Métodos de la clase: 
+	
+	//Descripción: Este método se encargará de devolver el tamanio_chango de un objeto de clase Chango. 
+	//Precondiciones: -.
+	//Postcondiciones: Retorna el valor de tamanio_chango de un objeto de clase Chango. 
+	+ entero obtener_tamanio_chango();
 
-	+
+	//Descripción: Este método se encargará de asignarle un nuevo valor al tamaño del Chango, que representa la cantidad de productos presentes en éste. 
+	//Precondiciones: El tamanio_del_chango pasado como parámetro debe ser un número positivo y natural, que no supere 50.  
+	//Postcondiciones: Al atributo tamanio_chango de un objeto de clase Chango se le asigna el valor de tamanio_del_chango, variable pasada como 
+	parámetro. 
+	+ tipo de dato vacío asignar_tamanio_chango(entero tamanio_del_chango);
+	
 -------------------------------------------------------------------------------------------------------------------------------------------------------
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------
